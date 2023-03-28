@@ -38,9 +38,11 @@ dependencies {
 project.afterEvaluate {
     publishing {
         publications {
-            aar(MavenPublication) {
-                //...
-                artifact bundleReleaseAar
+            productionRelease(MavenPublication) {
+                from components.release
+                groupId = 'com.github.Veere6'
+                artifactId = 'id'
+                version = "1.0"
             }
         }
     }
